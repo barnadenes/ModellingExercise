@@ -82,17 +82,23 @@ public class UserMenu {
                         System.out.println(user.getCalories() + "kcal remains.");
                         break;
                     case 7:
-                        System.out.println(refridgerator);
-                        break;
+                        if(refridgerator.getFridge().isEmpty()) {
+                            System.out.println("Empty Fridge!");
+                            break;
+                        }
+                        else {
+                            System.out.println(refridgerator);
+                            break;
+                        }
                 }
             } catch (NumberFormatException e) {
                 System.out.println("\nThat's not a valid number input!");
             } catch (AteTooMuchException e) {
-                System.out.println(e);
+                e.getMessage();
             } catch (EmptyFridgeException e) {
-                System.out.println(e);
+                e.getMessage();
             } catch (FoodNotFoundException e) {
-                System.out.println(e);
+                e.getMessage();
             } catch (IllegalArgumentException e) {
                 System.out.println("There is no such option!");
             }
