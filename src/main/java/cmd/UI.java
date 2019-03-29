@@ -64,7 +64,7 @@ public class UI {
                         printUsers();
                         break;
                     case 4:
-                        printFridges();
+                        getFridges();
                         break;
                     case 5:
                         if(users.isEmpty() || fridgeList.isEmpty()) {
@@ -73,15 +73,18 @@ public class UI {
                         }
                         System.out.println("Select a Refrigerator by ID: ");
                         printFridges();
-                        int SelectID = -1;
-                        while(SelectID > fridgeList.size() || SelectID < fridgeList.size())
+                        int SelectID;
+                        while(true)
                         {
                             try {
                                 SelectID = Integer.parseInt(reader.next());
-                                break;
+                                if ((SelectID >=0) && (SelectID < fridgeList.size()) ){
+                                    break;
+                                }
                             } catch (NumberFormatException ne) {
                                 System.out.print("Not a valid number. Try again: ");
                             }
+
                         }
                         for (int i = 0; i < users.size(); i++) {
                             System.out.println(users.get(i));
@@ -206,4 +209,14 @@ public class UI {
         return null;
     }
 
+    public void getFridges() {
+        if (!fridgeList.isEmpty()) {
+            for (Refridgerator refridgerator : fridgeList) {
+                System.out.print("Fridge no.: " + refridgerator.getId() + refridgerator + "\t");
+            }
+            System.out.println("");
+        } else {
+            System.out.println("Fridge is Empty!\n");
+        }
+    }
 }

@@ -29,7 +29,8 @@ public class UserMenu {
         System.out.println(" 4)  Take Food From Fridge (Eat it!).");
         System.out.println(" 5)  Take Food From Inventory (Eat it!).");
         System.out.println(" 6)  Check remaining calories for user.");
-        System.out.println(" 7)  Back");
+        System.out.println(" 7)  Fridge Content");
+        System.out.println(" 8)  Back");
     }
 
     public void subMenu() {
@@ -39,11 +40,11 @@ public class UserMenu {
                 userMenuPrint();
                 System.out.print("What would you like to do? ");
                 command = Integer.parseInt(reader.next());
-                while(command > 7 || command < 1) {
+                while(command > 8 || command < 1) {
                     System.out.println("Input must stay between 1 and 7!");
                     command = Integer.parseInt(reader.next());
                 }
-                if(command == 7)
+                if(command == 8)
                 {
                     break;
                 }
@@ -79,6 +80,9 @@ public class UserMenu {
                         break;
                     case 6:
                         System.out.println(user.getCalories() + "kcal remains.");
+                        break;
+                    case 7:
+                        System.out.println(refridgerator);
                         break;
                 }
             } catch (NumberFormatException e) {
