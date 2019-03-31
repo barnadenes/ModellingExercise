@@ -1,11 +1,7 @@
 package cmd;
 
-import api.Food;
-import api.Refridgerator;
-import api.User;
-import api.exceptions.EmptyFridgeException;
-import api.exceptions.NoSuchFridgeException;
-import api.exceptions.NoSuchUserException;
+import api.*;
+import api.exceptions.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,13 +48,19 @@ public class UI {
                 menuPrint();
                 System.out.print("What would you like to do? ");
                 command = Integer.parseInt(reader.next());
+                if(command > 6 || command < 0)
+                {
+                    throw new OutOfRangeException("Choose a number beetween 1 - 6");
+                }
 
                 switch (command) {
                     case 1:
                         newUser();
                         break;
                     case 2:
-                        newRefrigerator();
+                        System.out.println("Available Fridges to buy: |MEAT|VEGETABLE|DRINK|");
+                        String coolerType = reader.next();
+                        newRefrigerator(coolerType);
                         break;
                     case 3:
                         printUsers();
@@ -104,6 +106,12 @@ public class UI {
                 }
             } catch (NumberFormatException e) {
                 System.out.println("\nThat's not a valid number input!");
+            } catch (WrongFoodTypeException e) {
+                System.out.println(e.getMessage());
+            } catch (NoSuchFridgeException e) {
+                System.out.println(e.getMessage());
+            } catch (OutOfRangeException e) {
+                System.out.println(e.getMessage());
             }
         }
     }
@@ -130,11 +138,34 @@ public class UI {
         System.out.println("New user \"" + name + "\" has been created!\n");
     }
 
-    public void newRefrigerator() {
+    public void newRefrigerator(String type) throws NoSuchFridgeException {
         ++this.ID;
-        Refridgerator refridgerator = new Refridgerator(new ArrayList<Food>(), this.ID);
-        fridgeList.add(refridgerator);
-        System.out.println("An empty fridge has been bought!\n");
+        if(type.toUpperCase().equals("MEAT"))
+        {
+            Refridgerator refridgerator = new MeatFridge(new ArrayList<Food>(), this.ID);
+            fridgeList.add(refridgerator);
+            System.out.println("An empty Meat fridge has been bought!\n");
+        }
+        else if(type.toUpperCase().equals("VEGETABLE"))
+        {
+            Refridgerator refridgerator = new SaladFridge(new ArrayList<Food>(), this.ID);
+            fridgeList.add(refridgerator);
+            System.out.println("An empty Vegetable fridge has been bought!\n");
+        }
+        else if(type.toUpperCase().equals("DRINK"))
+        {
+            Refridgerator refridgerator = new DrinkFidge(new ArrayList<Food>(), this.ID);
+            fridgeList.add(refridgerator);
+            System.out.println("An empty Drink fridge has been bought!\n");
+        }
+        else
+        {
+            if(this.ID != 0)
+            {
+                --this.ID;
+            }
+            throw new NoSuchFridgeException("There's no such Fridge type!");
+        }
     }
 
     public void printUsers() {
@@ -212,11 +243,11 @@ public class UI {
     public void getFridges() {
         if (!fridgeList.isEmpty()) {
             for (Refridgerator refridgerator : fridgeList) {
-                System.out.print("Fridge no.: " + refridgerator.getId() + refridgerator + "\t");
+                System.out.print(refridgerator + "\t");
             }
             System.out.println("");
         } else {
-            System.out.println("Fridge is Empty!\n");
+            System.out.println("You haven't bought any Fridge yet!\n");
         }
     }
 }

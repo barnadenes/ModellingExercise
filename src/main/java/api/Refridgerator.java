@@ -4,9 +4,9 @@ import java.util.List;
 
 import api.exceptions.*;
 
-public class Refridgerator {
-    private List<Food> fridge;
-    private int id;
+public abstract class Refridgerator {
+    protected List<Food> fridge;
+    protected int id;
 
     public Refridgerator(List<Food> fridge, int id) {
         this.fridge = fridge;
@@ -79,11 +79,19 @@ public class Refridgerator {
         return id;
     }
 
+    public abstract void addFood(Food food) throws WrongFoodTypeException;
+
     //Shows this Fridge and its content.
     @Override
     public String toString() {
-        return "Refrigerator no." +
+        if(!fridge.isEmpty())
+        {
+            return getClass().getSimpleName() + " no." +
+                    id + " contains: \n" +
+                    fridge + "\n";
+        }
+        return getClass().getSimpleName() + " no." +
                 id + " contains: \n" +
-                fridge + "\n";
+                "Nothing yet!\n";
     }
 }

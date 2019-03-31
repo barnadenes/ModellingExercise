@@ -2,6 +2,7 @@ package api;
 import api.exceptions.AteTooMuchException;
 import api.exceptions.EmptyFridgeException;
 import api.exceptions.FoodNotFoundException;
+import api.exceptions.WrongFoodTypeException;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -90,13 +91,13 @@ public class User {
         }
     }
 
-    public void inventoryToFridge(String name, Refridgerator refridgerator) throws FoodNotFoundException {
+    public void inventoryToFridge(String name, Refridgerator refridgerator) throws FoodNotFoundException, WrongFoodTypeException {
             Iterator<Food> iterator = inventory.iterator();
             while (iterator.hasNext()) {
                 Food food1 = iterator.next();
                 if (food1.getName().equals(name))
                 {
-                    refridgerator.getFridge().add(food1);
+                    refridgerator.addFood(food1);
                     iterator.remove();
                     break;
                 }
@@ -119,7 +120,7 @@ public class User {
     public List<Food> getInventory() {
         return inventory;
     }
-
+    
     @Override
     public String toString() {
         if(inventory.isEmpty()){

@@ -6,20 +6,19 @@ import api.enums.Portion;
 import api.exceptions.AteTooMuchException;
 import api.exceptions.EmptyFridgeException;
 import api.exceptions.FoodNotFoundException;
+import api.exceptions.WrongFoodTypeException;
 
 import java.util.Scanner;
 
 public class UserMenu {
     private Scanner reader;
     private User user;
-    private UI ui;
     private Refridgerator refridgerator;
 
     public UserMenu(User user, Refridgerator refridgerator) {
         this.user = user;
         this.refridgerator = refridgerator;
         this.reader = new Scanner(System.in);
-        this.ui = new UI();
     }
 
     public void userMenuPrint() {
@@ -33,7 +32,7 @@ public class UserMenu {
         System.out.println(" 8)  Back");
     }
 
-    public void subMenu() {
+    public void subMenu() throws WrongFoodTypeException {
         int command = 0;
         while(true) {
             try {
@@ -41,7 +40,7 @@ public class UserMenu {
                 System.out.print("What would you like to do? ");
                 command = Integer.parseInt(reader.next());
                 while(command > 8 || command < 1) {
-                    System.out.println("Input must stay between 1 and 7!");
+                    System.out.println("Input must stay between 1 and 8!");
                     command = Integer.parseInt(reader.next());
                 }
                 if(command == 8)
@@ -94,11 +93,11 @@ public class UserMenu {
             } catch (NumberFormatException e) {
                 System.out.println("\nThat's not a valid number input!");
             } catch (AteTooMuchException e) {
-                e.getMessage();
+                System.out.println(e.getMessage());
             } catch (EmptyFridgeException e) {
-                e.getMessage();
+                System.out.println(e.getMessage());
             } catch (FoodNotFoundException e) {
-                e.getMessage();
+                System.out.println(e.getMessage());
             } catch (IllegalArgumentException e) {
                 System.out.println("There is no such option!");
             }
