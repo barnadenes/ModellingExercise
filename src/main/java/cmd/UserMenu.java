@@ -67,16 +67,30 @@ public class UserMenu {
                         break;
                     case 4:
                         System.out.println(refridgerator.toString());
-                        System.out.print("What would you like to eat?: ");
-                        String foodToConsume = reader.next();
-                        user.eatFoodFromFridge(foodToConsume, this.refridgerator);
-                        break;
+                        if(refridgerator.getFridge().isEmpty())
+                        {
+                            throw new EmptyFridgeException("Fridge is Empty!");
+                        }
+                        else
+                        {
+                            System.out.print("What would you like to eat?: ");
+                            String foodToConsume = reader.next();
+                            user.eatFoodFromFridge(foodToConsume, this.refridgerator);
+                            break;
+                        }
                     case 5:
-                        System.out.println(user);
-                        System.out.print("What would you like to eat?: ");
-                        String foodToEat = reader.next();
-                        user.eatFoodFromInventory(foodToEat);
-                        break;
+                        if(refridgerator.getFridge().isEmpty())
+                        {
+                            throw new EmptyFridgeException("Fridge is Empty!");
+                        }
+                        else
+                        {
+                            System.out.println(user);
+                            System.out.print("What would you like to eat?: ");
+                            String foodToEat = reader.next();
+                            user.eatFoodFromInventory(foodToEat);
+                            break;
+                        }
                     case 6:
                         System.out.println(user.getCalories() + "kcal remains.");
                         break;
