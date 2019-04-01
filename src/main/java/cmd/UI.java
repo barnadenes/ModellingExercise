@@ -50,7 +50,7 @@ public class UI {
                 command = Integer.parseInt(reader.next());
                 if(command > 6 || command < 0)
                 {
-                    throw new OutOfRangeException("Choose a number beetween 1 - 6");
+                    throw new OutOfRangeException("Choose a number beetween 1 - 6\n");
                 }
 
                 switch (command) {
@@ -80,11 +80,15 @@ public class UI {
                         {
                             try {
                                 SelectID = Integer.parseInt(reader.next());
-                                if ((SelectID >=0) && (SelectID < fridgeList.size()) ){
+                                if ((SelectID > 0) && (SelectID <= ID) ){
                                     break;
                                 }
-                            } catch (NumberFormatException ne) {
-                                System.out.print("Not a valid number. Try again: ");
+                                else
+                                {
+                                    throw new OutOfRangeException("Number should stay between 1 - " + ID + "\n");
+                                }
+                            } catch (NumberFormatException e) {
+                                System.out.print("Not a number!");
                             }
 
                         }
@@ -111,6 +115,8 @@ public class UI {
             } catch (NoSuchFridgeException e) {
                 System.out.println(e.getMessage());
             } catch (OutOfRangeException e) {
+                System.out.println(e.getMessage());
+            } catch (NoSuchUserException e) {
                 System.out.println(e.getMessage());
             }
         }
@@ -139,22 +145,22 @@ public class UI {
     }
 
     public void newRefrigerator(String type) throws NoSuchFridgeException {
-        ++this.ID;
+        this.ID++;
         if(type.toUpperCase().equals("MEAT"))
         {
-            Refridgerator refridgerator = new MeatFridge(new ArrayList<Food>(), this.ID);
+            Refridgerator refridgerator = new MeatFridge(new ArrayList<Food>(), ID);
             fridgeList.add(refridgerator);
             System.out.println("An empty Meat fridge has been bought!\n");
         }
         else if(type.toUpperCase().equals("VEGETABLE"))
         {
-            Refridgerator refridgerator = new SaladFridge(new ArrayList<Food>(), this.ID);
+            Refridgerator refridgerator = new SaladFridge(new ArrayList<Food>(), ID);
             fridgeList.add(refridgerator);
             System.out.println("An empty Vegetable fridge has been bought!\n");
         }
         else if(type.toUpperCase().equals("DRINK"))
         {
-            Refridgerator refridgerator = new DrinkFidge(new ArrayList<Food>(), this.ID);
+            Refridgerator refridgerator = new DrinkFidge(new ArrayList<Food>(), ID);
             fridgeList.add(refridgerator);
             System.out.println("An empty Drink fridge has been bought!\n");
         }
@@ -204,22 +210,19 @@ public class UI {
         }
     }
 
-    public User userSelect(String name) {
-        try {
+    public User userSelect(String name) throws NoSuchUserException {
+        while(true)
+        {
             for (User user : users) {
                 if (user.getName().equals(name)) {
                     return user;
                 }
-                else if(users.isEmpty())
+                else if(users.isEmpty() || !user.getName().equals(name))
                 {
                     throw new NoSuchUserException("User not found!");
                 }
             }
         }
-        catch (NoSuchUserException e) {
-            System.out.println(e);
-        }
-        return null;
     }
 
     public Refridgerator fridgeSelect(int ID) {

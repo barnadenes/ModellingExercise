@@ -85,6 +85,10 @@ public class UserMenu {
                             System.out.println("Empty Fridge!");
                             break;
                         }
+                        else if( refridgerator == null )
+                        {
+                            System.out.println("Empty Fridge!");
+                        }
                         else {
                             System.out.println(refridgerator);
                             break;

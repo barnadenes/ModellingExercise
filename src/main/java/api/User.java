@@ -120,7 +120,7 @@ public class User {
     public List<Food> getInventory() {
         return inventory;
     }
-    
+
     @Override
     public String toString() {
         if(inventory.isEmpty()){
