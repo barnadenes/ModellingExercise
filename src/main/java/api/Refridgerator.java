@@ -2,6 +2,7 @@ package api;
 
 import java.util.List;
 
+import api.enums.FoodType;
 import api.exceptions.*;
 
 public abstract class Refridgerator {
@@ -78,6 +79,8 @@ public abstract class Refridgerator {
     public int getId() {
         return id;
     }
+
+    public abstract FoodType getFoodType();
 
     public abstract void addFood(Food food) throws WrongFoodTypeException;
 

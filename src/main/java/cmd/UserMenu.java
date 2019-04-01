@@ -131,7 +131,7 @@ public class UserMenu {
         System.out.print("What kind of Food it is? (DRINK|MEAT|VEGETABLE): ");
         String foodType = reader.next().toUpperCase();
 
-        if(!foodType.equals(refridgerator.getClass().getSimpleName().toUpperCase()))
+        if(!foodType.equals(refridgerator.getFoodType().name().toUpperCase()))
         {
             throw new WrongFoodTypeException("You can't add " + foodType + " to a " + refridgerator.getClass().getSimpleName());
         }

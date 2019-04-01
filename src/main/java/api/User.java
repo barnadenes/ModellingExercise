@@ -129,7 +129,7 @@ public class User {
                     "\'s inventory is empty!\n";
         }
         return "\n" + name + " can eat " + calories +
-                "kcal more today!\nUser " + name +
+                "kcal more today!\n\tUser " + name +
                 "\'s inventory contains these items: " +
                 inventory + "\n";
     }

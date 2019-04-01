@@ -1,5 +1,6 @@
 package api;
 
+import api.enums.FoodType;
 import api.exceptions.WrongFoodTypeException;
 
 import java.util.List;
@@ -8,6 +9,10 @@ public class DrinkFridge extends Refridgerator {
 
     public DrinkFridge(List<Food> fridge, int id) {
         super(fridge, id);
+    }
+
+    public FoodType getFoodType() {
+        return FoodType.DRINK;
     }
 
     public void addFood(Food food) throws WrongFoodTypeException {

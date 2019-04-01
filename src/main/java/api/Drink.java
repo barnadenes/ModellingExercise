@@ -39,7 +39,7 @@ public class Drink extends Food implements Edible {
                 " calories : " + calories.getCalories() + "kcal\n" +
                 " amount : " + weight + "l" + "\n" +
                 " brand : "  + brand + "\n" +
-                " alcoholContent : " + alcoholContent + "%";
+                " alcoholContent : " + alcoholContent + "%\n";
     }
 
     public boolean edile() {
