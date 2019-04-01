@@ -32,7 +32,7 @@ public class UserMenu {
         System.out.println(" 8)  Back");
     }
 
-    public void subMenu() throws WrongFoodTypeException {
+    public void subMenu() {
         int command = 0;
         while(true) {
             try {
@@ -118,16 +118,23 @@ public class UserMenu {
                 System.out.println(e.getMessage());
             } catch (IllegalArgumentException e) {
                 System.out.println("There is no such option!");
+            } catch (WrongFoodTypeException e) {
+                System.out.println(e.getMessage());
             }
 
         }
     }
 
-    public void addNewFoodToFridge() throws IllegalArgumentException{
+    public void addNewFoodToFridge() throws IllegalArgumentException, WrongFoodTypeException {
         System.out.print("What's the name of the Food?: ");
         String foodName = reader.next();
         System.out.print("What kind of Food it is? (DRINK|MEAT|VEGETABLE): ");
         String foodType = reader.next().toUpperCase();
+
+        if(!foodType.equals(refridgerator.getClass().getSimpleName().toUpperCase()))
+        {
+            throw new WrongFoodTypeException("You can't add " + foodType + " to a " + refridgerator.getClass().getSimpleName());
+        }
 
         while (!foodType.equals(FoodType.MEAT.toString()) && !foodType.equals(FoodType.VEGETABLE.toString()) && !foodType.equals(FoodType.DRINK.toString()))
         {

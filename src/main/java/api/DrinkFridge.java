@@ -4,9 +4,9 @@ import api.exceptions.WrongFoodTypeException;
 
 import java.util.List;
 
-public class DrinkFidge extends Refridgerator {
+public class DrinkFridge extends Refridgerator {
 
-    public DrinkFidge(List<Food> fridge, int id) {
+    public DrinkFridge(List<Food> fridge, int id) {
         super(fridge, id);
     }
 

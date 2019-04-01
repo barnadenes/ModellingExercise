@@ -110,9 +110,7 @@ public class UI {
                 }
             } catch (NumberFormatException e) {
                 System.out.println("\nThat's not a valid number input!");
-            } catch (WrongFoodTypeException e) {
-                System.out.println(e.getMessage());
-            } catch (NoSuchFridgeException e) {
+            }  catch (NoSuchFridgeException e) {
                 System.out.println(e.getMessage());
             } catch (OutOfRangeException e) {
                 System.out.println(e.getMessage());
@@ -160,7 +158,7 @@ public class UI {
         }
         else if(type.toUpperCase().equals("DRINK"))
         {
-            Refridgerator refridgerator = new DrinkFidge(new ArrayList<Food>(), ID);
+            Refridgerator refridgerator = new DrinkFridge(new ArrayList<Food>(), ID);
             fridgeList.add(refridgerator);
             System.out.println("An empty Drink fridge has been bought!\n");
         }
@@ -200,7 +198,7 @@ public class UI {
         {
             for(Refridgerator refridgerator : fridgeList)
             {
-                System.out.print("Fridge no.: " + refridgerator.getId() + "\t");
+                System.out.print("\t" + refridgerator.getClass().getSimpleName() + " no.: " + refridgerator.getId());
             }
             System.out.println("");
         }
@@ -246,7 +244,7 @@ public class UI {
     public void getFridges() {
         if (!fridgeList.isEmpty()) {
             for (Refridgerator refridgerator : fridgeList) {
-                System.out.print(refridgerator + "\t");
+                System.out.print(refridgerator);
             }
             System.out.println("");
         } else {
