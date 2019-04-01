@@ -76,12 +76,13 @@ public class UserMenu {
                             System.out.print("What would you like to eat?: ");
                             String foodToConsume = reader.next();
                             user.eatFoodFromFridge(foodToConsume, this.refridgerator);
+                            System.out.println("Food was eaten!");
                             break;
                         }
                     case 5:
-                        if(refridgerator.getFridge().isEmpty())
+                        if(user.getInventory().isEmpty())
                         {
-                            throw new EmptyFridgeException("Fridge is Empty!");
+                            throw new EmptyFridgeException("Inventory is Empty!");
                         }
                         else
                         {
@@ -89,6 +90,7 @@ public class UserMenu {
                             System.out.print("What would you like to eat?: ");
                             String foodToEat = reader.next();
                             user.eatFoodFromInventory(foodToEat);
+                            System.out.println("Food was eaten!");
                             break;
                         }
                     case 6:

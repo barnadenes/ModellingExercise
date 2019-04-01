@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="186a7d31-22e4-4d8a-b861-8e3412c1cf3b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/api/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/Drink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api/DrinkFridge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/DrinkFridge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api/MeatFridge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/MeatFridge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api/Refridgerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/Refridgerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api/SaladFridge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/SaladFridge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cmd/UserMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cmd/UserMenu.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
@@ -35,8 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/api/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="131" column="37" selection-start-line="131" selection-start-column="37" selection-end-line="131" selection-end-column="37" />
+            <state relative-caret-position="176">
+              <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
               <folding>
                 <element signature="e#3759#3760#0" expanded="true" />
                 <element signature="e#3786#3787#0" expanded="true" />
@@ -45,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cmd/UserMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+            <state relative-caret-position="298">
+              <caret line="92" column="63" selection-start-line="92" selection-start-column="63" selection-end-line="92" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -72,7 +66,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/api/DrinkFridge.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="312">
@@ -157,8 +151,8 @@
         <option value="$PROJECT_DIR$/src/main/java/api/SaladFridge.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/DrinkFridge.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/MeatFridge.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cmd/UserMenu.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/Drink.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cmd/UserMenu.java" />
       </list>
     </option>
   </component>
@@ -339,7 +333,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5672576" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5192909" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39103234" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -477,17 +471,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/api/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="131" column="37" selection-start-line="131" selection-start-column="37" selection-end-line="131" selection-end-column="37" />
-          <folding>
-            <element signature="e#3759#3760#0" expanded="true" />
-            <element signature="e#3786#3787#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/api/Food.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
@@ -532,13 +515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cmd/UserMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/api/Refridgerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -568,6 +544,24 @@
             <element signature="e#282#283#0" expanded="true" />
             <element signature="e#309#310#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/api/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+          <folding>
+            <element signature="e#3759#3760#0" expanded="true" />
+            <element signature="e#3786#3787#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cmd/UserMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="92" column="63" selection-start-line="92" selection-start-column="63" selection-end-line="92" selection-end-column="63" />
         </state>
       </provider>
     </entry>
